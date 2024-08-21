@@ -1,0 +1,11 @@
+{
+  "name": "kanban-project",
+  "version": "1.0.0",
+  "scripts": {
+    "install:all": "npm install --prefix be && npm install --prefix fe",
+    "start": "concurrently \"npm start --prefix be\" \"npm start --prefix fe\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

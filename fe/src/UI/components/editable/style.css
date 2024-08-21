@@ -1,0 +1,76 @@
+.editable {
+  width: 100%;
+  height: 100%;
+  background: var(--primary-background);
+}
+
+.editable_display {
+  padding: 6px 12px;
+  border-radius: 3px;
+  background-color: var(--secondary-background);
+  color: #000;
+  cursor: pointer;
+  width: fit-content;
+  transition: 200ms;
+}
+
+.editable_display:hover {
+  background-color: #ddd;
+}
+
+.editable_edit {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  height: 100%;
+  background: var(--primary-background);
+}
+
+.editable_edit input {
+  border: 2px solid #0079bf;
+  border-radius: 5px;
+  outline: none;
+  font-size: 1rem;
+  padding: 10px;
+}
+
+.editable_edit_footer {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.editable_edit_footer button {
+  cursor: pointer;
+  border-radius: 5px;
+  outline: none;
+  background-color: var(--primary-button-background);
+  color: #fff;
+  border: none;
+  transition: 100ms ease;
+  padding: 10px;
+}
+
+.editable_edit_footer button.cancel {
+  color: var(--primary-button-background);
+  background-color: #fff;
+}
+
+.editable_edit_footer button.cancel {
+  background-color: #fff;
+}
+.editable_edit_footer button:active {
+  transform: translateY(2px);
+}
+
+.editable_edit_footer .closeIcon {
+  cursor: pointer;
+  height: 24px;
+  width: 24px;
+}
+
+.text-editable-input {
+  margin-top: 30px;
+}

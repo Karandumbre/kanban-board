@@ -1,0 +1,63 @@
+.kanban-header-icon_style {
+  width: 30px;
+  height: 30px;
+  color: #635ec5;
+}
+
+.app-side-menu_heading {
+  display: flex;
+  text-align: center;
+  padding: 30px;
+  align-items: center;
+  gap: 10px;
+}
+
+.side-menu-board-list_para {
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  padding-left: 40px;
+  color: var(--light-font-color);
+}
+
+.side-menu-board-list_style {
+  color: var(--WHITE);
+  text-decoration: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  padding-left: 40px;
+  margin-right: 20px;
+  border-radius: 0 20px 20px 0;
+}
+
+.side-menu-board-list_style.active {
+  background: var(--primary-button-background);
+}
+
+.side-menu-board-list-button_block {
+  color: #3f3b75;
+  padding: 10px;
+  padding-left: 40px;
+}
+
+.side-menu-board-list-icon_style {
+  width: 15px;
+  height: 15px;
+  margin-right: 10px;
+}
+.side-menu-board-list-button_style {
+  font-weight: bold;
+  color: #3f3b75;
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.closeIcon {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}

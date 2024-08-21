@@ -1,0 +1,52 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Board {
+  id        Int      @id @default(autoincrement())
+  name      String
+  columns   Column[] @relation("BoardColumns")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Column {
+  id        Int      @id @default(autoincrement())
+  name      String
+  boardId   Int
+  tasks     Task[]   @relation("ColumnTasks")
+  board     Board    @relation("BoardColumns", fields: [boardId], references: [id])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Task {
+  id        Int       @id @default(autoincrement())
+  title     String
+  column    Column    @relation("ColumnTasks", fields: [columnId], references: [id])
+  columnId  Int
+  subtasks  Subtask[] @relation("TaskSubtasks")
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
+
+model Subtask {
+  id        Int      @id @default(autoincrement())
+  title     String
+  completed Boolean  @default(false)
+  task      Task     @relation("TaskSubtasks", fields: [taskId], references: [id])
+  taskId    Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
